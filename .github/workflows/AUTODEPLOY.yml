@@ -29,4 +29,4 @@ jobs:
       run: npm install --global surge
       
     - name: Deploying surge
-      run: surge ./ mytimes.surge.sh/ --token ${{ secrets.SECRET_KEY }}
+      run: surge ./ mytimes.surge.sh/ --token 'efa833a543447d1b94ca8f3d976f06f0' #${{ secrets.SECRET_KEY }}
