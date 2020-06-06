@@ -7,8 +7,6 @@ name: Auto_Deploy
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,11 +22,11 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install NodeJS
-      uses: actions/setup-@v2-beta
+      uses: actions/setup-node@v2-beta
       with:
         node-version: 13
     - name: Install surge
       run: npm install --global surge
       
     - name: Deploying surge
-      run: surge ./ smooth-ice.surge.sh/ --token ${{ secrets.SECRET_KEY }}
+      run: surge ./ http://mytimes.surge.sh/ --token ${{ secrets.SECRET_KEY }}
